@@ -1,0 +1,18 @@
+int TEMP = 0;//se pasa la temperatura a un numero entero
+
+void setup()//se inicia la comunicacion serial
+{
+  Serial.begin(9600);//le indica al arduino que inicie la comunicacion con la computadora
+
+  pinMode(11, OUTPUT);//define al pin 11 como salida
+}
+
+void loop()//al llegar aquí, el arduino volverá a la primera línea y comenzará a ejecutar todas las instrucciones nuevamente
+{
+  Serial.println("TEMP");//imprime en el puerto serial "temp"
+  Serial.println(TEMP);//imprime en el puerto serial "temp"
+  if (TEMP > 20) {//si la temperatura es mayor a 20
+    digitalWrite(11, HIGH);//define al pin 11 en alta 
+  }
+  delay(10); // Delay a little bit to improve simulation performance
+}//hace que espere 10 segundos
